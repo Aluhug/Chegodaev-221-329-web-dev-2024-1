@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="text-center">
     <h1>{{ post.title }}</h1>
     <p>Author: {{ post.author }}</p>
     <p>Date: {{ post.date }}</p>
+    </div>
     <img class="img-fluid my-3 border" src="{{ url_for('static', filename='images/' + post.image_id) }}"
          alt="Post_Image">
     <p>{{ post.text }}</p>
 
     <form class="my-4">
-        <h4>Оставьте комментарий</h4>
+        <h4>Оставьте свой комментарий</h4>
         <div class="form-group">
             <textarea class="form-control" id="comment_text" name="comment_text" rows="4"
-                      placeholder="Enter your comment"></textarea>
+                      placeholder="Оставьте свой комментарий"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary mt-1">Submit</button>
+        <button type="submit" class="btn btn-primary mt-1">Отправить</button>
     </form>
 
     <div class="comments">
@@ -22,11 +24,11 @@
             <div class="comment">
                 <div class="d-flex">
                     <div class="flex-shrink-0">
-                        <img class="comment_logo" src="{{ url_for('static', filename='images/commentLogo.jpg') }}"
-                             alt="Sample Image">
+                        <img class="comment_logo" src="{{ url_for('static', filename='images/makaka.jpg') }}"
+                             alt="makaka">
                     </div>
                     <div class="flex-grow-1 ms-3">
-                        <h5>{{ comment.author }}</h5>
+                        <h4>{{ comment.author }}</h4>
                         <p>{{ comment.text }}</p>
                     </div>
                 </div>
@@ -38,8 +40,8 @@
                                 <div class="d-flex">
                                     <div class="flex-shrink-0">
                                         <img class="comment_logo"
-                                             src="{{ url_for('static', filename='images/commentLogo.jpg') }}"
-                                             alt="Sample Image">
+                                             src="{{ url_for('static', filename='images/makaka.jpg') }}"
+                                             alt="makaka">
                                     </div>
                                     <div class="flex-grow-1 ms-3">
                                         <h5>{{ reply.author }}</h5>
