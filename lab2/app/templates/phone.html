@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Проверка номера телефона
+{% endblock %}
+
+{% block content %}
+    <h1 class="mb-2">Проверка номера телефона</h1>
+    <form class="form" method="post">
+        <div class="form-group">
+            <input type="text" class="mb-2 fs-4 form-control{% if error %} is-invalid{% endif %}" id="num" name="num" value="{{ request.form.num }}" placeholder="Введите номер телефона">
+            {% if error %}
+            <div class="fs-4 invalid-feedback mb-2">{{ error }}</div>
+            {% endif %}
+        </div>
+        <button class="btn btn-primary mb-2 mt-2 fs-4" type="submit">Проверить</button>
+        <input class="form-control fs-4 mt-auto" type="text" disabled value="{{ result }}">
+    </form>
+{% endblock %}

@@ -1,0 +1,7 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/ve/
+/__pycache__/
+/app/ve
+/app/.env/
