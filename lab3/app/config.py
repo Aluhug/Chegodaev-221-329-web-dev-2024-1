@@ -1,0 +1,3 @@
+import os
+
+SECRET_KEY = b'36b0eb6d03938c5c715eae395c92fa0c513a0bd7d7a75481af30d911fc51661a2c0c37c48af3'
